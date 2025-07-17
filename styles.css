@@ -1,0 +1,404 @@
+body {
+
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+    margin: 0;
+    color: #333;
+
+}
+.container {
+
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+
+}
+
+h1 {
+
+    color: #333;
+    margin-bottom: 20px;
+
+}
+.input-group {
+
+    margin-bottom: 15px;
+    text-align: left;
+
+}
+.input-group label {
+
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+
+}
+.input-group input {
+
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+
+}
+.input-group input:focus {
+
+    border-color: #007bff;
+    outline: none;
+
+}
+.input-group input[type="number"] {
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+
+}
+
+
+button {
+
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 10px;
+    width: 100%;
+
+}
+button:hover {
+
+    background-color: #0056b3;
+
+}
+#resultado {
+
+    margin-top: 25px;
+    font-size: 1.1em;
+    color: #333;
+    font-weight: bold;
+    text-align: left;
+    
+}
+
+.container {
+
+    background-color: #fff;
+    padding: 35px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    box-sizing: border-box; /* Incluye padding en el ancho */
+
+}
+
+h1 {
+
+    color: #0056b3;
+    margin-bottom: 25px;
+    font-size: 2em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+h3 {
+
+    color: #444;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+
+}
+
+.input-group {
+
+    margin-bottom: 20px;
+    text-align: left;
+    position: relative; /* Para posicionar el icono */
+}
+
+.input-group label {
+    position: absolute; /* Para posicionar el icono */
+    top: 12px;
+    left: 12px;
+    font-size: 0.9em;
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+
+}
+
+.input-group input {
+
+    width: calc(100% - 22px); /* Ajusta por padding y border */
+    padding: 12px;
+    border: 1px solid #ccd0d5;
+    border-radius: 5px;
+    font-size: 1em;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.07);
+    transition: border-color 0.3s ease;
+}
+
+button {
+
+    background-color: #007bff;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    margin-top: 15px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+
+}
+
+button:hover {
+
+    background-color: #0056b3;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#resultado {
+    margin-top: 30px;
+    font-size: 1.2em;
+    text-align: left;
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#listaNumeros {
+
+    margin-top: 20px;
+    font-size: 1em;
+    font-family: 'Courier New', Courier, monospace;
+    white-space: pre-wrap; /* Para que los saltos de línea funcionen */
+    max-height: 200px;
+    overflow-y: auto; /* Agrega scroll si la lista es muy larga */
+    border: 1px solid #ddd;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    line-height: 1.6;
+
+}
+
+#listaNumeros p {
+
+    margin: 0;
+}
+
+#listaNumeros .par {
+
+    color: #28a745; /* Verde */
+    font-weight: bold;
+}
+
+#listaNumeros .impar {
+
+    color: #dc3545; /* Rojo */
+    font-weight: bold;
+}
+
+#resumenContadores {
+
+    margin-top: 15px;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #333;
+
+}
+
+#resultadoValidacion {
+
+    background-color: #f0f0f0;
+    color: #333;
+    border: 1px solid #ddd;
+    margin-top: 25px;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+}
+
+#resultadoValidacion.fuerte {
+
+    background-color: #d4edda; /* Verde claro */
+    color: #155724; /* Verde oscuro */
+    border: 1px solid #c3e6cb;
+}
+
+#resultadoValidacion.debil {
+
+    background-color: #f8d7da; /* Rojo claro */
+    color: #721c24; /* Rojo oscuro */
+    border: 1px solid #f5c6cb;
+}
+
+#resultadoValidacion.casi-fuerte {
+
+    background-color: #fff3cd; /* Amarillo claro */
+    color: #856404; /* Amarillo oscuro */
+    border: 1px solid #ffeeba;
+
+}
+
+
+button:hover {
+
+    background-color: #0056b3;
+}
+
+#resultadoTabla {
+
+    margin-top: 30px;
+    text-align: left;
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    font-size: 1.1em;
+    font-family: 'Courier New', Courier, monospace; /* Fuente monoespaciada para alinear bien */
+    white-space: pre-wrap; /* Para que los saltos de línea y espacios funcionen */
+    max-height: 300px; /* Limita la altura y permite scroll */
+    overflow-y: auto;
+    line-height: 1.6;
+}
+
+#listaMultiplicacion {
+
+    margin-top: 20px;
+    font-size: 1em;
+    font-family: 'Courier New', Courier, monospace; /* Fuente monoespaciada para alinear bien */
+    white-space: pre-wrap; /* Para que los saltos de línea y espacios funcionen */
+    max-height: 300px; /* Limita la altura y permite scroll */
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    line-height: 1.6;
+
+}
+
+#listaMultiplicacion p {
+
+    margin: 0;
+    padding: 2px 0;
+}
+
+.limit-reached {
+
+    color: #dc3545; /* Rojo para el mensaje de límite */
+    font-weight: bold;
+
+}
+
+button#reiniciarBtn {
+
+    background-color: #28a745; /* Color verde para reiniciar */
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
+    display: none; /* Oculto por defecto, se mostrará al generar la tabla */
+}
+
+button#reiniciarBtn:hover {
+
+    background-color: #218838;
+
+}
+
+#mensajeJuego {
+
+    background-color: #f0f0f0;
+    color: #333;
+    border: 1px solid #ddd;
+    margin-top: 25px;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-align: center;
+    min-height: 50px; /* Para mantener espacio incluso si no hay mensaje */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+
+}
+
+#mensajeJuego.correcto {
+
+    background-color: #d4edda; /* Verde claro */
+    color: #155724; /* Verde oscuro */
+    border: 1px solid #c3e6cb;
+
+}
+
+#mensajeJuego.incorrecto {
+
+
+    background-color: #f8d7da; /* Rojo claro */
+    color: #721c24; /* Rojo oscuro */
+    border: 1px solid #f5c6cb;
+    
+}
+
+#mensajeJuego.pista {
+
+    background-color: #fff3cd; /* Amarillo claro */
+    color: #856404; /* Amarillo oscuro */
+    border: 1px solid #ffeeba;
+
+}
+
+#contadorIntentos {
+
+    margin-top: 20px;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #333;
+    margin-top: 15px;
+    font-size: 0.95em;
+    color: #666;
+    text-align: center;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+

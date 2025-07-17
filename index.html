@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>JS Excercises</title>
+</head>
+<body>
+    <main class="excercises">
+         <div class="container">
+        <h1>Calculadora de Impuestos</h1>
+        <div class="input-group">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" placeholder="Ingresa tu nombre" required>
+        </div>
+        <div class="input-group">
+            <label for="edad">Edad:</label>
+            <input type="number" id="edad" placeholder="Ingresa tu edad" required>
+        </div>
+        <div class="input-group">
+            <label for="sueldo">Sueldo Mensual:</label>
+            <input type="number" id="sueldo" placeholder="Ingresa tu sueldo" required>
+        </div>
+        <button id="calcularImpuesto">Calcular Impuesto</button>
+        <div id="resultado"></div>
+    </div>
+     <div class="container">
+        <h1>Contador de Pares e Impares</h1>
+        <div class="input-group">
+            <label for="numeroN">Ingresa un número entero (N):</label>
+            <input type="number" id="numeroN" placeholder="Ej: 20" required>
+        </div>
+        <button id="contarNumeros">Contar</button>
+        <div id="resultado">
+            <h3>Números:</h3>
+            <div id="listaNumeros"></div>
+            <h3>Resumen:</h3>
+            <p id="resumenContadores"></p>
+        </div>
+    </div>
+    <div class="container">
+        <h1>Validador de Contraseñas Fuertes</h1>
+        <p>Mínimo 8 caracteres, Mayús, Minús, Número</p>
+        <div class="input-group">
+            <label for="passwordInput">Ingresa tu contraseña:</label>
+            <input type="password" id="passwordInput"  required>
+        </div>
+        <button id="validarPassword">Validar Contraseña</button>
+        <div id="resultadoValidacion"></div>
+    </div>
+    <div class="container">
+        <h1>Generador de Tabla de Multiplicar</h1>
+        <div class="input-group">
+            <label for="numeroBase">Ingresa un número para la tabla:</label>
+            <input type="number" id="numeroBase" placeholder="Ej: 7" required>
+        </div>
+        <button id="generarTabla">Generar Tabla</button>
+        <div id="resultadoTabla">
+            <h3>Tabla de Multiplicar:</h3>
+            <div id="listaMultiplicacion"></div>
+        </div>
+    </div>
+    <div class="container">
+        <h1>Adivina el Número Secreto (1-20)</h1>
+        <p>Tienes **5 intentos** para adivinarlo.</p>
+        <div class="input-group">
+            <label for="numeroIntento">Ingresa tu intento:</label>
+            <input type="number" id="numeroIntento" min="1" max="20" placeholder="Un número entre 1 y 20" required>
+        </div>
+        <button id="adivinarBtn">Adivinar</button>
+        <button id="reiniciarBtn" style="display: none;">Reiniciar Juego</button>
+        <div id="mensajeJuego"></div>
+        <div id="contadorIntentos">Intentos restantes: 5</div>
+    </div>
+    </main>
+    <script src="main.js"></script>
+</body>
+</html>
