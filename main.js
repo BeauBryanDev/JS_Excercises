@@ -15,9 +15,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const sueldo = parseFloat(sueldoInput.value);
 
         // Validar que los campos no estén vacíos y sean números válidos
-        if (!nombre || isNaN(edad) || isNaN(sueldo) || edad < 0 || sueldo < 0) {
-            resultadoDiv.innerHTML = '<p style="color: red;">Por favor, ingresa datos válidos en todos los campos.</p>';
-            return; // Detener la ejecución si hay errores
+        if (!nombre || isNaN(edad) || isNaN(sueldo) || edad < 0 || sueldo < 100 ) {
+            resultadoDiv.innerHTML = '<p style="color: red;">Por favor, ingresa datos válidos en todos los campos. Sueldo debe ser Mayor > 100.</p>';
+            return; // Detener la ejecución si hay errores por estos dartos.
         }
 
         let impuestoPorcentaje = 0;
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (edad < 18) {
 
-            mensajeImpuesto = 'está exento de pagar impuestos.';
+            mensajeImpuesto = 'No Tienes que pagar impuestos.';
             impuestoPorcentaje = 0;
 
         } else if (edad >= 18 && edad <= 30) {
@@ -65,54 +65,55 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-//  Second Excercise 
+//  Second Excercise   NRo 2 .
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    const numeroNInput = document.getElementById('numeroN');
-    const contarBtn = document.getElementById('contarNumeros');
-    const listaNumerosDiv = document.getElementById('listaNumeros');
-    const resumenContadoresP = document.getElementById('resumenContadores');
+const numeroNInput = document.getElementById('numeroN');
+const contarBtn = document.getElementById('contarNumeros');
+const listaNumerosDiv = document.getElementById('listaNumeros');
+const resumenContadoresP = document.getElementById('resumenContadores');
 
-    contarBtn.addEventListener('click', () => {
-        const n = parseInt(numeroNInput.value);
+contarBtn.addEventListener('click', () => {
+    const n = parseInt(numeroNInput.value);
 
-        // Validar la entrada
-        if (isNaN(n) || n <= 0) {
-            listaNumerosDiv.innerHTML = '<p style="color: red;">Por favor, ingresa un número entero positivo válido.</p>';
-            resumenContadoresP.textContent = '';
-            return;
+    // Validar la entrada
+    if (isNaN(n) || n <= 0) {
+        listaNumerosDiv.innerHTML = '<p style="color: red;">Por favor, ingresa un número entero positivo válido.</p>';
+        resumenContadoresP.textContent = '';
+        return;
+    }
+
+    let pares = 0;
+    let impares = 0;
+    let numerosHTML = ''; // Para construir la lista de números  En un Vacio
+
+    // Bucle para iterar desde 1 hasta n tomando el mismo n al final.
+    for (let i = 1; i <= n; i++) {
+        // Usar el operador módulo (%) para verificar si [i] es par o impar
+        if (i % 2 === 0) {
+            // Es par
+            pares++;
+            numerosHTML += `<p class="par">${i} (Par)</p>`;
+            continue;
+        } else {
+            // Es impar
+            impares++;
+            numerosHTML += `<p class="impar">${i} (Impar)</p>`;
+            continue;
         }
 
-        let pares = 0;
-        let impares = 0;
-        let numerosHTML = ''; // Para construir la lista de números
+    }
 
-        // Bucle para iterar desde 1 hasta n
-        for (let i = 1; i <= n; i++) {
-            // Usar el operador módulo (%) para verificar si es par o impar
-            if (i % 2 === 0) {
-                // Es par
-                pares++;
-                numerosHTML += `<p class="par">${i} (Par)</p>`;
-            } else {
-                // Es impar
-                impares++;
-                numerosHTML += `<p class="impar">${i} (Impar)</p>`;
-            }
-            // El 'continue' no es estrictamente necesario aquí para la lógica,
-            // ya que el 'if/else' ya maneja ambos casos, pero si tuvieras
-            // más lógica después de la clasificación podrías usarlo.
-            // Por ejemplo: if (i % 2 === 0) { /* par */; continue; } /* impar */
-        }
+    // Mostrar la lista de números
+    listaNumerosDiv.innerHTML = numerosHTML;
 
-        // Mostrar la lista de números
-        listaNumerosDiv.innerHTML = numerosHTML;
-
-        // Mostrar el resumen de contadores
-        resumenContadoresP.innerHTML = `Total de Pares: <span class="par">${pares}</span><br>Total de Impares: <span class="impar">${impares}</span>`;
+    // Mostrar el resumen de contadores
+    resumenContadoresP.innerHTML = `Total de Pares: <span class="par">${pares}</span><br>Total de Impares: <span class="impar">${impares}</span>`;
     });
 });
+
+// Third Excercise  .[3] ...
 
 const numeroNInput = document.getElementById('numeroN');
 const contarBtn = document.getElementById('contarNumeros');
@@ -131,11 +132,11 @@ contarBtn.addEventListener('click', () => {
 
     let pares = 0;
     let impares = 0;
-    let numerosHTML = ''; // Para construir la lista de números
+    let numerosHTML = ''; // Para construir la lista de números desde vacio en HTML ...
 
-    // Bucle para iterar desde 1 hasta n
+    // Bucle para iterar desde 1 hasta n....
     for (let i = 1; i <= n; i++) {
-        // Usar el operador módulo (%) para verificar si es par o impar
+        // Usar el operador módulo (%) para verificar si es par o impar....
         if (i % 2 === 0) {
             // Es par
             pares++;
@@ -147,10 +148,7 @@ contarBtn.addEventListener('click', () => {
             numerosHTML += `<p class="impar">${i} (Impar)</p>`;
             continue;
         }
-        // El 'continue' no es estrictamente necesario aquí para la lógica,
-        // ya que el 'if/else' ya maneja ambos casos, pero si tuvieras
-        // más lógica después de la clasificación podrías usarlo.
-        // Por ejemplo: if (i % 2 === 0) { /* par */; continue; } /* impar */
+    
     }
 
     // Mostrar la lista de números
@@ -160,6 +158,8 @@ contarBtn.addEventListener('click', () => {
     resumenContadoresP.innerHTML = `Total de Pares: <span class="par">${pares}</span><br>Total de Impares: <span class="impar">${impares}</span>`;
 });
 
+// Fourth Exce [4] .........
+
 const passwordInput = document.getElementById('passwordInput');
 const validarBtn = document.getElementById('validarPassword');
 const resultadoDiv = document.getElementById('resultadoValidacion');
@@ -168,7 +168,7 @@ validarBtn.addEventListener('click', () => {
     
     const password = passwordInput.value;
 
-    let esFuerte = true;
+    let esFuerte = false;
     let mensajes = [];
 
     // 1. Al menos 8 caracteres
@@ -180,7 +180,7 @@ validarBtn.addEventListener('click', () => {
     }
 
     // 2. Incluye mayúscula
-    // Usamos .match() con una expresión regular para buscar al menos una letra mayúscula
+    // USE match() con una expresión regular para buscar al menos una letra mayúscula
     if (!password.match(/[A-Z]/)) {
 
         esFuerte = false;
@@ -189,7 +189,7 @@ validarBtn.addEventListener('click', () => {
     }
 
     // 3. Incluye minúscula
-    // Usamos .match() con una expresión regular para buscar al menos una letra minúscula
+    // USE match() con una expresión regular para buscar al menos una letra minúscula
     if (!password.match(/[a-z]/)) {
 
         esFuerte = false;
@@ -198,7 +198,7 @@ validarBtn.addEventListener('click', () => {
     }
 
     // 4. Incluye número
-    // Usamos .match() con una expresión regular para buscar al menos un dígito
+    // USE match() con una expresión regular para buscar al menos un dígito
     if (!password.match(/[0-9]/)) {
 
         esFuerte = false;
@@ -206,19 +206,19 @@ validarBtn.addEventListener('click', () => {
 
     }
 
-    // 5. Opcional: incluir símbolo (ejemplo para demostrar .match con símbolos)
-    // Puedes considerar una contraseña "más fuerte" si incluye símbolos.
-    // Si quisieras que fuera obligatorio, quitarías el "esFuerte = true;" de aquí
     const tieneSimbolo = password.match(/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/);
 
     if (!tieneSimbolo) {
 
         mensajes.push('Considera incluir un símbolo (!@#$%****...) para mayor seguridad.');
+    } else {
+
+        esFuerte = true;
     }
 
     // Mostrar mensaje según evaluación
 
-    resultadoDiv.className = ''; // Limpia clases anteriores
+    resultadoDiv.className = ''; // Limpia clases anteriores, desecho.
 
     if (esFuerte && tieneSimbolo) {
 
@@ -228,7 +228,7 @@ validarBtn.addEventListener('click', () => {
 
     } else if (esFuerte) {
 
-        resultadoDiv.classList.add('fuerte'); // Sigue siendo fuerte, pero sin símbolo opcional
+    resultadoDiv.classList.add('fuerte'); // Sigue siendo fuerte, pero sin símbolo [*/+_.=?(=(/=&%$#"$%"))] opcional no es suficiente para @meee
         resultadoDiv.innerHTML = '¡Contraseña **FUERTE**!';
 
     } else {
@@ -264,10 +264,10 @@ generarBtn.addEventListener('click', () => {
         return;
     }
 
-    let tablaHTML = ''; // Cadena para construir la tabla
+    let tablaHTML = ''; // String para construir la tabla
     const limiteSuperior = 125; // Define el límite para la opción extra
 
-    // Bucle for para generar la tabla del 1 al 12
+    // Bucle for para generar la tabla del 1 al 12, SSAOLO HASTA [12]\n....
     for (let i = 1; i <= 12; i++) {
         // Calcular el resultado de la multiplicación
         const resultado = numeroBase * i;
@@ -280,7 +280,7 @@ generarBtn.addEventListener('click', () => {
             tablaHTML += `<p class="limit-reached">*** El resultado (${resultado}) superó ${limiteSuperior}. La tabla se detuvo aquí. ***</p>`;
             break; // Detiene el bucle
 
-        }
+        } 
 
     }
     // Si no se ha alcanzado el límite, añadir un mensaje de finalización
@@ -294,6 +294,7 @@ generarBtn.addEventListener('click', () => {
 
 });
 
+//FIFTH EXCEs  ---> [5].......
 
 const numeroIntentoInput = document.getElementById('numeroIntento');
 const adivinarBtn = document.getElementById('adivinarBtn');
@@ -322,14 +323,14 @@ function iniciarJuego() {
     console.log('Número secreto (solo para depuración):', numeroSecreto); // Puedes quitar esto en producción
 }
 
-// Llama a iniciarJuego al cargar la página para empezar el juego
+// Llama a iniciarJuego al cargar la página para empezar el juego. en su solo div .container. ...
 iniciarJuego();
 
-// Event listener para el botón Adivinar
+// Event listener para el botón Adivinar del usuario
 adivinarBtn.addEventListener('click', () => {
 const intentoUsuario = parseInt(numeroIntentoInput.value);
 
-// Validar que la entrada sea un número entre 1 y 20
+// Validar que la entrada sea un número entre 1 y 20 y solo est rango. 
 
 if (isNaN(intentoUsuario) || intentoUsuario < 1 || intentoUsuario > 20) {
 
@@ -338,12 +339,12 @@ if (isNaN(intentoUsuario) || intentoUsuario < 1 || intentoUsuario > 20) {
     return; // Salir de la función si la entrada es inválida
 }
 
-// Decrementar intentos
+// DisminuUir  intentos  i--
 intentosRestantes--;
 
 contadorIntentosDiv.textContent = `Intentos restantes: ${intentosRestantes}`;
 
-// Evaluar el intento
+// Evaluar el intento EN INTENTPS.
 if (intentoUsuario === numeroSecreto) {
 
     mensajeJuegoDiv.textContent = `¡Felicidades! Adivinaste el número secreto (${numeroSecreto}).`;
@@ -351,8 +352,7 @@ if (intentoUsuario === numeroSecreto) {
     adivinarBtn.style.display = 'none'; // Ocultar botón de adivinar
     reiniciarBtn.style.display = 'block'; // Mostrar botón de reiniciar
     numeroIntentoInput.disabled = true; // Deshabilitar input
-    // No necesitamos 'break' aquí porque el juego termina y ya no hay más bucle.
-    // La lógica está impulsada por eventos, no por un bucle while directo.
+
 } else if (intentosRestantes === 0 && intentoUsuario !== numeroSecreto) {
     mensajeJuegoDiv.textContent = `¡Se te acabaron los intentos! El número secreto era ${numeroSecreto}.`;
     mensajeJuegoDiv.className = 'incorrecto';
